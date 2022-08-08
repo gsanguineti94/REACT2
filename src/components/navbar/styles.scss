@@ -41,7 +41,7 @@ body {
 .navbar-center {
     width: 100%;
     max-width: 1170px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,6 +52,7 @@ body {
     color: var(--mainBlack);
     background-color: #baddae;
     z-index: 4;
+    align-self: flex-start;
     list-style-type: none;
     font-family: "Amatic SC";
 }
@@ -65,6 +66,14 @@ li {
 }
 
 a {
-    color: black;
+    color: var(--mainBlack);
     text-decoration: none;
+}
+
+.contador {
+    width: fit-content;
+    background-color: var(--mainGrey);
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
 }
