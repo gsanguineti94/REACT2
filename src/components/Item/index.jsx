@@ -1,12 +1,11 @@
 import './item.css';
-
 import React from 'react';
 
-const Item = () => {
+const Item = ({info}) => {
     return(
         <a href='' className="product">
-            <img src="https://i.snipboard.io/LX8jJq.jpg" alt="" />
-            <p>Focacchia</p>
+            <img src={info.image} alt="" />
+            <p>{info.prod}</p>
         </a>
     )
 

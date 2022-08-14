@@ -1,4 +1,9 @@
-img {
-    height: 25%;
+.product p{
+    margin-left: .5rem;
+}
+
+.product img{
     width: 25%;
+    height: 25%;
+    margin-left: .5rem;
 }
