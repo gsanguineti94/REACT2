@@ -4,9 +4,9 @@ import React, {useEffect, useState} from "react";
 import Title from '../title';
 
 const products = [
-    {id: 1, image: "https://i.imgur.com/fXA241T.jpg", prod: "Focacchia de tomate" },
-    {id: 2, image: "https://i.imgur.com/m7YamBC.jpg", prod: "Hogaza de masa madre"},
-    {id: 3, image: "https://i.imgur.com/IIs0te8.jpg", prod: "Pan de molde Brioche"},
+    {id: 1, pictureUrl: "https://i.imgur.com/fXA241T.jpg", title: "Focacchia de tomate", price: "280"},
+    {id: 2, pictureUrl: "https://i.imgur.com/m7YamBC.jpg", title: "Hogaza de masa madre", price: "500"},
+    {id: 3, pictureUrl: "https://i.imgur.com/IIs0te8.jpg", title: "Pan de molde Brioche", price: "550"},
 ];
 
 export const ItemListContainer = ({ texto }) => {

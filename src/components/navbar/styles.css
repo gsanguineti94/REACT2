@@ -12,7 +12,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -28,20 +29,31 @@ body {
   top: 0;
   height: 60px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #baddae;
   z-index: 1;
-  box-shadow: 0 0 7px -1px rgba(0, 0, 0, 0.568627451);
+  -webkit-box-shadow: 0 0 7px -1px #00000091;
+          box-shadow: 0 0 7px -1px #00000091;
 }
 
 .navbar-center {
   width: 100%;
   max-width: 1170px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 1.5rem;
 }
 
@@ -49,7 +61,8 @@ body {
   color: var(--mainBlack);
   background-color: #baddae;
   z-index: 4;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   list-style-type: none;
   font-family: "Amatic SC";
 }
@@ -75,4 +88,5 @@ a {
   margin: auto;
   padding: 1rem;
   text-align: center;
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */
