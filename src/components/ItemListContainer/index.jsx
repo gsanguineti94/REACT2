@@ -14,8 +14,9 @@ export const ItemListContainer = ({ texto }) => {
 
     useEffect(() => {
         const getData = new Promise(resolve => {
-            resolve(products);
-        });
+            setTimeout(() => {
+                resolve(products);
+            }, 3000);
         getData.then(res => setData(res));
     },[]);
 
