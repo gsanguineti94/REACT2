@@ -17,6 +17,7 @@ export const ItemListContainer = ({ texto }) => {
             setTimeout(() => {
                 resolve(products);
             }, 3000);
+        });
         getData.then(res => setData(res));
     },[]);
 
