@@ -9,8 +9,11 @@ export const NavBar = () => {
         <nav className="navbar">
             <div className="navbar-center">
                 <ul className="nav-menu">
-                    <li className="productos-btn">
+                    <li className="home-btn">
                         <NavLink to='/'>Home</NavLink>
+                    </li>
+                    <li className="home-btn">
+                        <NavLink to='/Productos'>Productos</NavLink>
                     </li>
                     <li className="negro-btn">
                         <NavLink to='/categoria/MasaMadre'>Masa Madre</NavLink>

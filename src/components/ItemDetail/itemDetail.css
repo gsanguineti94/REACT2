@@ -17,8 +17,9 @@
     flex-wrap: wrap;
 }
   
-.detail__image {
-    width: 100%;
+.detail_image {
+    width: 50%;
+    height: 50%;
 }
   
 .content {
