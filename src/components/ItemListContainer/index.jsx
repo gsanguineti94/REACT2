@@ -1,4 +1,3 @@
-import ItemCount from '../ItemCount';
 import ItemList from '../ItemList';
 import React, {useEffect, useState} from "react";
 import Title from '../title';
@@ -34,15 +33,9 @@ export const ItemListContainer = ({ texto }) => {
         }
     },[categoriaId]);
 
-    const onAdd = (count) => {
-        console.log('Compraste ' + count + ' unidades');
-        alert('Compraste ' + count + ' unidades');
-    }
-
     return (
         <>
             <Title greeting={texto} />
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
             <ItemList data={data} />
         </>
     );
