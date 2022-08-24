@@ -1,23 +1,29 @@
+import './App.css';
+import React from 'react';
+
+import { BrowserRouter, Routes, Route}  from "react-router-dom";
+
 import Navbar from './components/navbar';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer'
 import Cart from "./components/Cart";
 import Logo from './components/Home';
-import './App.css';
-import { BrowserRouter, Routes, Route}  from "react-router-dom";
+import CartProvider from './context/CartContext';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Logo />}/>
-          <Route path='/productos' element={<ItemListContainer />}/>
-          <Route path='/categoria/:categoriaId' element={<ItemListContainer />}/>
-          <Route path='/cart' element={<Cart />}/>
-          <Route path='/detalle/:detalleId' element={<ItemDetailContainer />}/>
-        </Routes>
+        <CartProvider>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Logo />}/>
+            <Route path='/productos' element={<ItemListContainer />}/>
+            <Route path='/categoria/:categoriaId' element={<ItemListContainer />}/>
+            <Route path='/cart' element={<Cart />}/>
+            <Route path='/detalle/:detalleId' element={<ItemDetailContainer />}/>
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </>
   );
