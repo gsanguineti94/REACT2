@@ -7,7 +7,7 @@ import './cart.css';
 
 
 const Cart = () => {
-    const {cart, totalPrice} = useCartContext();
+    const {cart, totalPrice, clearCart} = useCartContext();
 
     const order = {
         buyer: {
@@ -49,7 +49,8 @@ const Cart = () => {
                 <p>
                     Total: ${totalPrice()}
                 </p>
-                <button onClick={handleClick}>Finalizar Compra</button>
+                <Link to='/order'><button onClick={handleClick}>Finalizar Compra</button></Link>
+                <button onClick={() => clearCart()}>Vaciar carrito</button>
             </div>
         </>
     )
