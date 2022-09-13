@@ -27,7 +27,7 @@ export const ItemDetail = ({data}) => {
                     <h2 className="description">{data.detail}</h2>
                     {
                         goToCart
-                            ? <Link to='/cart'>Finalizar Compra</Link>
+                            ? <Link to='/cart'>Ir al Carrito</Link>
                             : <ItemCount initial={1} stock={5} onAdd={onAdd} />
                     }
                 </div>
