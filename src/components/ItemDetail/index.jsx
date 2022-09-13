@@ -23,7 +23,7 @@ export const ItemDetail = ({data}) => {
                 <img className="detail_image"  src={data.pictureUrl} alt="" />
                 <div className="content">
                     <h1 className="title">{data.title}</h1>
-                    <h1 className="price">{data.price}</h1>
+                    <h1 className="price">${data.price}</h1>
                     <h2 className="description">{data.detail}</h2>
                     {
                         goToCart
