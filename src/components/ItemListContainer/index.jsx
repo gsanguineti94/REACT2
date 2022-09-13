@@ -1,17 +1,10 @@
 import ItemList from '../ItemList';
 import React, {useEffect, useState} from "react";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import Title from '../title';
 import { useParams } from "react-router-dom";
 
-const products = [
-    {id: 1, pictureUrl: "https://i.imgur.com/mn8NsAM.png", title: "Focacchia de tomate", price: 280, category:"Fochacchias"},
-    {id: 2, pictureUrl: "https://i.imgur.com/GrgoqfS.png", title: "Hogaza de masa madre", price: 500, category:"MasaMadre"},
-    {id: 3, pictureUrl: "https://i.imgur.com/SKou6Rk.png", title: "Pan de molde Brioche", price: 550, category:"Moldes"},
-    {id: 4, pictureUrl:"https://i.imgur.com/dm4n7EK.png", title:"Prepizza", price: 250, category:"MasaMadre"},
-    {id: 5, pictureUrl:"https://i.imgur.com/zIJShhs.png", title:"Hogaza con semillas", price: 600, category:"MasaMadre"},
-    {id: 6, pictureUrl:"https://i.imgur.com/pP59tNS.png", title:"Pan de Molde blanco", price: 400, category:"Moldes"},
-    {id: 7, pictureUrl:"https://i.imgur.com/8TIi1nL.png", title:"Pan de Molde integral", price: 500, category:"Moldes"},
-];
+
 
 export const ItemListContainer = ({ texto }) => {
     const [data, setData] = useState([]);
@@ -19,17 +12,17 @@ export const ItemListContainer = ({ texto }) => {
     const {categoriaId} = useParams();
 
     useEffect(() => {
-        const getData = new Promise(resolve => {
-            setTimeout(() => {
-                resolve(products);
-            }, 1000);
-        });
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'products');
         if (categoriaId) {
-            getData.then(res => setData(res.filter(products => products.category === categoriaId)));
+            const queryFilter = query(queryCollection, where('category', '==', categoriaId))
+            getDocs(queryFilter)
+                .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
         }
-        else{
-            getData.then(res => setData(res));
-        }
+            else {
+                getDocs(queryCollection)
+                    .then(res => setData(res.docs.map(product => ({id: product.id, ...product.data()}))))
+            }
     },[categoriaId]);
 
     return (
