@@ -20,11 +20,16 @@ const Cart = () => {
         total: totalPrice(),
     }
 
+    const refreshPage = ()=>{
+        window.location.reload();
+     }
+
     const handleClick = () =>{
         const db = getFirestore();
         const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, order)
             .then (({id}) => console.log(id))
+        refreshPage()
     }
 
     if (cart.length === 0) {
@@ -49,7 +54,7 @@ const Cart = () => {
                 <p>
                     Total: ${totalPrice()}
                 </p>
-                <Link to='/order'><button onClick={handleClick}>Finalizar Compra</button></Link>
+                <button onClick={handleClick}>Finalizar Compra</button>
                 <button onClick={() => clearCart()}>Vaciar carrito</button>
             </div>
         </>
